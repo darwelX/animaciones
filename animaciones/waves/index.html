@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Waves</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+    }
+    .container {
+      height: 500px;
+      background: #0f9bf6;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .content {
+      font-family: Arial;
+      text-align: center;
+      font-size: 2em;
+      color: rgba(255,255,255, .8);
+    }
+
+    .wave{
+      position: absolute;
+      left: -180px;
+      bottom: 0;
+      /* del ancho del tamaño del sprite */
+      width: 2402px;
+      /* se toma el alto de la imagen y se divide entre el numero de ellas 1281/3 */
+      height: 427px;
+      /* border-radius: 50%; */
+      /* background-color: rgba(0,0,0,.3); */
+      background: url('waves.png') center bottom no-repeat;
+      animation: 5s wave ease-in-out infinite alternate;
+    } 
+    .wave.a{
+      /* 854px es el alto de 2 olas 1281*2 = 427  => 427x2 = 854*/
+      background-position: 0 -854px;
+    }   
+    .wave.b{
+      /* 427px es el alto de cada ola 2402x1281 => 1281/3 = 427 */
+      background-position: 0 -427px; 
+      animation-delay: .6s;
+    }
+    .wave.c{
+      background-position: 0 0;
+      animation-delay: 1.2s;
+    }
+
+    @keyframes wave{
+      0%{
+        transform: translateX(-80) translateY(30px)
+      }
+      50%{
+        transform: translateX(-80px, 30px);
+      }
+      100%{
+        transform: translateX(160px) translateY(-60px);
+      }
+    }
+    .waves{
+      position: absolute;
+      /* con left y right ocuparan el ancho de la pagina */
+      /* left: 0;
+      right: 0;
+      height: 200px;
+      bottom: 0; */
+      bottom: -135px;
+      height: 527px;
+      width: 100%;
+      /* hace que el contenido que se desborde se oculte y no sobresalga */
+      overflow: hidden;
+    }    
+  </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+          <h1>Hola mundo!</h1>
+          <p>Estoy en el curso de animaciones para la web!</p>
+        </div>
+        <div class="waves">
+          <div class="wave circulo a" style="text-align: center"></div>
+          <div class="wave circulo b" style="text-align: center"></div>
+          <div class="wave circulo c" style="text-align: center"></div>
+        </div>
+      </div>
+</body>
+</html>

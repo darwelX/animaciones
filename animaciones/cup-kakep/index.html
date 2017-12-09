@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animacion de cupke</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style type="text/css">
+    body{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-image: url('cupkakes.png');
+    }
+    .container{
+      width: 100%;
+      border: solid 1px red;
+    }
+    .cupkakes{
+      position: relative;
+      animation-name: moverGrados;
+      animation-duration: .3s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: forwards;
+      will-change: transform;
+      width: 200px;
+      float: none;
+      margin: 0 auto;
+    }    
+
+    @keyframes mover {
+        15%
+          {
+            transform: translateX(5px);
+          }
+        30%
+          {
+            transform: translateX(-5px);
+          }
+        50%
+          {
+            transform: translateX(3px);
+          }
+        65%
+          {
+            transform: translateX(-3px);
+          }
+        80%
+          {
+            transform: translateX(2px);
+          }
+        100%
+          {
+            transform: translateX(0);
+          }        
+    }  
+
+    @keyframes moverGrados{
+      0%{
+        transform: rotateZ(30deg);
+      }
+      50%{
+        transform: rotateZ(-30deg)
+      }
+      100%{
+        transform: rotateZ(0deg);
+      }
+    }
+    .base{
+      width: 100px;
+      height: 0px;
+      border-right: 50px solid transparent;
+      border-left: 50px solid transparent;
+      border-top: 110px solid #7B615D;
+    }
+    .toping_uno {
+      width: 91px; 
+      height: 90px; 
+      border: 5px solid #E84185; 
+      border-bottom: none;
+      border-left:none;
+      /* border-bottom: none; */
+      background: #9F5229;
+      -moz-border-radius: 0 100px 0 0;
+      -webkit-border-radius: 0 100px 0 0;
+      border-radius: 0 100px 0 0;
+      position: relative;
+      top: 95px;
+      left: 104.5px;
+    }    
+
+    .toping_dos {
+      width: 100.5px; 
+      height: 90px; 
+      border: 5px solid #E84185;
+      border-bottom: none;
+      border-right:none;
+      /* border-bottom: none;       */
+      background: #9F5229;
+      -moz-border-radius: 100px 0 0 0;
+      -webkit-border-radius: 100px 0 0 0;
+      border-radius: 100px 0 0 0;
+    } 
+
+    .chispa_uno{
+      color:#428bca;
+      transform: rotate(23deg);
+    }     
+    .chispa_dos{
+      color:darkorange;
+      position: relative;
+      top: 40%;
+      left: 13%;
+      transform: rotate(23deg);
+    }     
+    .chispa_tres{
+      color: crimson ;
+      position: relative;
+      top: 66%;
+      transform: rotate(23deg);
+    }     
+    .chispa_cuatro{
+      color:yellow;
+      position: relative;
+      top: 38%;
+      transform: rotate(23deg);
+    }     
+    .chispa_cinco{
+      color:#5cb85c;
+      position: relative;
+      top: 57%;
+      left: -2%;
+      transform: rotate(23deg);
+    }     
+
+    .estrella_uno{
+      color: crimson;
+      position: relative;
+      top: 78%;
+      left: 9%;
+      transform: rotate(23deg);      
+    }     
+    .estrella_dos{
+      color:#428bca;
+      position: relative;
+      top: 40%;
+      left:-6%;
+      transform: rotate(23deg);
+    }     
+    .estrella_tres{
+      color: #5cb85c;
+      position: relative;
+      top: 38%;
+      left: -30%;
+      transform: rotate(23deg);
+    }     
+    .estrella_cuatro{
+      color:darkorange;
+      position: relative;
+      top: 11%;
+      left: -9%;
+      transform: rotate(23deg);
+    }     
+    .estrella_cinco{
+      color:yellow;
+      position: relative;
+      top: 23%;
+      left: -53%;
+      transform: rotate(23deg);
+    }     
+
+    .toping-dos-chispa-uno{
+      color:#5cb85c;
+      position:relative;
+      top: 10%;
+      left: 73%;
+      transform: rotate(-23deg);
+    }     
+   .toping-dos-chispa-dos{
+      color:darkorange;
+      position: relative;
+      top: 40%;
+      left:13%;
+      transform: rotate(-23deg);
+    }     
+   .toping-dos-chispa-tres{
+      color: #428bca ;
+      position: relative;
+      top: 52%;
+      transform: rotate(-23deg);
+    }     
+   .toping-dos-chispa-cuatro{
+      color:crimson;
+      position: relative;
+      top: 54%;
+      left:7%;
+      transform: rotate(-23deg);
+    }     
+   .toping-dos-chispa-cinco{
+      color:yellow;
+      position: relative;
+      top: 57%;
+      left: 15%;
+      transform: rotate(-23deg);
+    }     
+
+    .toping-dos-estrella-uno{
+      color:darkorange;
+      position: relative;
+      top: 63%;
+      left: 26%;
+      transform: rotate(-23deg);
+    }     
+    .toping-dos-estrella-dos{
+      color:#428bca;
+      position: relative;
+      top: 57%;
+      left: 8%;
+      transform: rotate(-23deg);
+    }     
+    .toping-dos-estrella-tres{
+      color: crimson;
+      position: relative;
+      top: 14%;
+      left: 8%;
+      transform: rotate(-23deg);
+    }     
+    .toping-dos-estrella-cuatro{
+      color:#5cb85c;
+      position: relative;
+      top: 17%;
+      left: -12%;
+      transform: rotate(-23deg);
+    }     
+    .toping-dos-estrella-cinco{
+      color:yellow;
+      position: relative;
+      top: 9%;
+      transform: rotate(-23deg);
+    }     
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cupkakes">
+      <div class="toping_uno">
+        <i class="chispa_uno fa fa-square"></i>
+        <i class="estrella_uno fa fa-star"></i>
+        <i class="chispa_dos fa fa-square"></i>
+        <i class="estrella_cinco fa fa-star"></i>
+        <i class="chispa_tres fa fa-square"></i>
+        <i class="estrella_dos fa fa-star"></i>
+        <i class="chispa_cuatro fa fa-square"></i>
+        <i class="estrella_cuatro fa fa-star"></i>
+        <i class="chispa_cinco fa fa-square"></i>
+        <i class="estrella_tres fa fa-star"></i>
+      </div>
+      <div class="toping_dos">
+          <i class="toping-dos-chispa-uno fa fa-square"></i>
+          <i class="toping-dos-estrella-uno fa fa-star"></i>
+          <i class="toping-dos-chispa-dos fa fa-square"></i>
+          <i class="toping-dos-estrella-cinco fa fa-star"></i>
+          <i class="toping-dos-chispa-tres fa fa-square"></i>
+          <i class="toping-dos-estrella-dos fa fa-star"></i>
+          <i class="toping-dos-chispa-cuatro fa fa-square"></i>
+          <i class="toping-dos-estrella-cuatro fa fa-star"></i>
+          <i class="toping-dos-chispa-cinco fa fa-square"></i>
+          <i class="toping-dos-estrella-tres fa fa-star"></i>     
+        </div>
+      <div class="base">
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+  
+  
+  
+  
+  

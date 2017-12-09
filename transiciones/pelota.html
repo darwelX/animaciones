@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    .pelota {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: red;
+      transition: 1s;
+      /*transition-timing-function: ease;*/
+      /*transition-delay: 5s; tiempo de retardo para que inicie la transicion*/
+      /*transition-property: width; se le aplica la transicion a solo propiedades espeicficas, si se omite esta propiedad se aplica a todas las propiedades de la clase*/
+    }
+
+    .pelota:hover{
+      width: 200px;
+      height: 200px
+    }
+  </style>
+</head>
+<body>
+  <div class="pelota"></div>
+</body>
+</html>

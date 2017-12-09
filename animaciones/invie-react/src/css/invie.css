@@ -1,0 +1,774 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?nik5sr');
+  src:  url('../fonts/icomoon.eot?nik5sr#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?nik5sr') format('truetype'),
+    url('../fonts/icomoon.woff?nik5sr') format('woff'),
+    url('../fonts/icomoon.svg?nik5sr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e942";
+}
+.icon-envelop:before {
+  content: "\e945";
+}
+.icon-menu:before {
+  content: "\e9bd";
+}
+.icon-close:before {
+  content: "\ea0d";
+}
+
+/** {
+  width: tamaño;
+  height: tamaño;
+  padding: 10px;
+  padding-top: 10px;
+  padding-right: 13px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding: 10px 13px 5px 15px;
+  margin: 10px;
+  margin-top: 10px;
+  margin-right: 13px;
+  margin-left: 15px;
+  margin-bottom: 5px;
+  margin: 10px 13px 5px 15px;
+  border: 2px solid red;
+}*/
+
+body {
+  font-family: 'Allerta', sans-serif;
+  margin: 0;
+}
+
+
+table {
+  width: 100%;
+}
+
+th {
+  background: #273b47;
+  color: white;
+}
+
+th {
+  padding: 10px 20px;
+  text-align: left;
+}
+
+td {
+  padding: 20px;
+}
+
+table, td, th {
+  border: 1px solid #273b47;
+  border-collapse: collapse;
+}
+
+input, textarea {
+  outline: 0;
+}
+
+input:focus, textarea:focus {
+  background: lightgray;
+}
+
+.contenedor {
+  max-width: 800px; /* se obtiene el mismo efecto del dedia query pero con menos codigo */
+  margin: auto;
+  position: relative;
+}
+
+.background {
+  background-color: #466173; /*esta es una buena practica mientras carga la imagen de precarga un color de fondo*/
+  background-image: url('../images/background.png');
+  background-size: cover;
+}
+.portada.background.is-animated{
+  background-image: url('../images/team-platzi-azul.jpg');
+  background-repeat: no-repeat;
+  animation-name: fondo;
+  animation-duration: 15s;
+  animation-timing-function: linear;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+@keyframes fondo{
+  0%{
+    background-size: 200%;
+    background-position: center;
+  }
+  20%{
+    background-position: right top;
+  }
+  40%{
+    background-position: center;
+    background-size: 100%;
+  }
+  60%{
+    background-position: left top;
+  }
+  80%{
+    background-position: left -100px;
+  }
+  100%{
+    background-position: right -100px;
+    background-size: 200%;
+  }
+}
+.button {
+  border-radius: 12px;
+  border: none;
+  color: white;
+  padding: 7px 12px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 18px;
+  background: #fd324e;
+  background: linear-gradient(to left, #fe344e, #ff7250);
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f3c5bd+0,e86c57+50,ea2803+51,ff6600+75,c72200+100;Red+Gloss */
+  /*background: rgb(243,197,189); /* Old browsers */
+  /* background: -moz-linear-gradient(top,  rgba(243,197,189,1) 0%, rgba(232,108,87,1) 50%, rgba(234,40,3,1) 51%, rgba(255,102,0,1) 75%, rgba(199,34,0,1) 100%);
+  background: -webkit-linear-gradient(top,  rgba(243,197,189,1) 0%,rgba(232,108,87,1) 50%,rgba(234,40,3,1) 51%,rgba(255,102,0,1) 75%,rgba(199,34,0,1) 100%);
+  background: linear-gradient(to bottom,  rgba(243,197,189,1) 0%,rgba(232,108,87,1) 50%,rgba(234,40,3,1) 51%,rgba(255,102,0,1) 75%,rgba(199,34,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3c5bd', endColorstr='#c72200',GradientType=0 ); */
+
+}
+
+.titulo {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 70px;
+  margin-bottom: 0;
+  margin-top: 70px;
+}
+
+.titulo span {
+  text-decoration: underline;
+}
+
+.title-a {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+.title-b {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.guitarras {
+  color: #1F313C;
+  margin-bottom: 60px;
+}
+
+.guitarras h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 35px;
+}
+
+
+
+.portada {
+
+  color: white;
+  padding: 20px;
+  height: 500px;
+}
+
+.portada button {
+  margin-bottom: 70px;
+}
+
+
+.menu {
+  font-size: 24px;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.menu li {
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.menu li:before{
+  content: '∘';
+  font-size: 50px;
+  line-height: 20px;
+  color: white;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.logotipo {
+  display: inline-block;
+  margin-left: 0;
+}
+
+
+.guitarra {
+  margin: 10px 10px 40px;
+  padding: 10px 2em;
+  border: 1px solid #1F313C;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  min-height: 250px;
+  transition: .3s;
+  position: relative;
+}
+.guitarra:hover{
+  /* box-shadow: x y % color */
+  box-shadow: 10px 10px 0 #ff3149;
+}
+
+.guitarra-title{
+  font-size: 3em;
+  margin: 0 0 .2em;
+  padding-bottom: .2em;
+  border-bottom: 2px dashed #1e313d;
+}
+.guitarra:nth-of-type(even):hover{
+  box-shadow: -10px 10px 0 black;
+}
+.guitarra:nth-of-type(even){
+  justify-content: flex-end;
+}
+.guitarra:nth-of-type(even) .guitarra-image{
+  left: 0;
+  right: initial; /*con este valor se resetea*/
+  width: 300px;
+} 
+.guitarra-image{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 239px;
+}
+
+.guitarra ol {
+  padding: 0;
+  list-style: none;
+  counter-reset: features;
+}
+.guitarra li::before{
+  counter-increment: features;
+  content: counter(features) ". ";
+}
+.guitarra.b {
+  height: 190px;
+}
+
+
+.derecha {
+  float: right;
+  position: relative;
+  top: -127px;
+}
+
+.izquierda {
+  float: left;
+  position: relative;
+}
+
+.contenedor-guitarra-a {
+  padding-left: 20px;
+}
+.contenedor-guitarra-b {
+  margin-left: 370px;
+  position: relative;
+  bottom: 90px;
+
+}
+
+.header {
+  position: relative;
+}
+
+
+.footer {
+  background: #273b47;
+  padding: 50px 10px;
+}
+
+.contacto {
+  display: flex;
+  width: 300px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.contacto img {
+  display: block;
+}
+
+.contacto strong {
+  display: block;
+}
+
+.contacto a {
+  color: white;
+  text-decoration: none;
+  margin: 10px 10px 10px 0;
+}
+
+
+.footer .contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.formulario {
+  display: flex;
+  width: 400px;
+  color: white;
+}
+
+
+.col1, .col2 {
+  display: flex;
+  flex-direction: column;
+}
+
+.col1 {
+  margin-right: 15px;
+}
+.col2 {
+  align-items: flex-start;
+}
+
+.col2 .button {
+  margin-top: 15px;
+}
+
+.intereses label {
+  font-size: 12px;
+}
+
+.formulario label, .sexo, .intereses {
+  margin-bottom: 10px;
+}
+
+
+.sexo {
+  margin-top: 10px;
+}
+
+
+.tabla {
+  margin: 50px 0;
+}
+
+.burger-button {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 40px;
+  background: #395667;
+  display: none;
+  text-align: center;
+  position: fixed; /*se cambia a fixed para que el boton siga el recorrido del scroll a lo largo de la pantalla*/
+  left: 20px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 3;
+  color: white;
+}
+
+.video-demo{
+  margin: 0 auto 83px;
+  max-width: 500px;
+  border: 5px solid #3c5b6e;
+}
+
+/*tablets*/
+@media screen and (max-width: 1024px) {
+  /*.contenedor {
+    width: auto;  -esto se hace para resetear el ancho ya que esta declarado arriba- re ajusta las medidas de la caja tomando en cuenta todo el modelo de caja (pading margin height) 
+    max-width: 800px;  y luego si se fija el valor 
+  }*/
+  /*predcios*/
+  .tabla {
+    margin: 50px 20px;
+  }
+  .tabla .contenedor{
+    overflow: auto; /*agrega la barra scroll a la tabla */
+    border: 1px solid #273b47;
+  }
+  /*precios*/
+
+  /* portada */
+  .titulo {
+    font-size: 45px;
+    margin-top: 30px;
+  }
+
+  .title-a {
+    font-size: 18px;
+  } 
+
+  .portada {
+    height: auto;
+  } 
+
+  .portada .button {
+    margin-bottom: 30px;
+    display: inline-block; /* se cambia el display para que aplique la propiedad margin ya que button es una ancla y su display es inline */
+  }
+  /* portada*/
+
+
+  /* guitarras */
+  .guitarras {
+    text-align: center;
+  }
+  .izquierda, .derecha {
+    float: none; /* se aplica resets a los elementos */
+    position: static; /* se aplica resets a los elementos */
+  }
+
+  .title-b{
+    margin: 0;
+  }
+
+  .guitarra li {
+    list-style: none;
+  }
+
+  .guitarra.b{
+    height: auto;
+  }
+
+  /* .contenedor-guitarra-b { */
+  /* .contenedor-guitarra {
+    margin: auto;
+    position: static;
+  } */
+
+  /* .contenedor-guitarra-a { */
+  /* .contenedor-guitarra {
+  padding: 0;
+  } */
+  .contenedor-guitarra {
+    margin-top: 17em;
+    text-align: center;
+  }
+
+  .video-demo{
+    margin-bottom: 0;
+  }
+  /* guitarras */
+}
+
+/*Ipad*/
+@media screen and (max-width: 767px){
+
+  .footer .contenedor {
+    display: block;
+  }
+  .contacto{
+    margin: 0 auto;
+    display: block; /*para que contacto y telefono se vea uno debajo del otro*/
+  }
+
+  .contacto a {
+    display: block; /*para que contacto y telefono se vea uno debajo del otro*/
+  }
+  .formulario {
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+  }
+
+  .intereses label{
+    display: block;
+    font-size: 20px;
+  }
+
+  .sexo label {
+    display: block; /* hace que los radio buton se vea uno debajo del otro*/
+  }
+
+  input[type=text]{
+    margin-bottom: 25px; /*para usabilidad*/
+  }
+
+  input[type="text"],
+  input[type="email"]{
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  textarea{
+    width: 100%;
+    font-size: 16px;
+    padding: 5px;
+  }
+
+  .col1 {
+    margin: 0; /* para que los inputs tengan un ancho copado */
+  }
+
+  input[type="radio"],
+  input[type="checkbox"]{
+    zoom: 1.5; /*¨incrementa el tamaño del elemento */
+  }
+
+  .guitarra:nth-of-type(even) .guitarra-image {
+    left: 0;
+    right: initial;
+    top: 0;
+  }
+
+  .contenedor-guitarra {
+    margin-top: 7em;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 650px){
+  /* portada */
+  .header {
+    text-align: center;
+  }
+
+  .logotipo {
+    margin: 0;
+  }
+
+  .menu {
+    display: block;
+    position: static; /* se resetea para que el menu quede centarado */
+  }
+
+  .menu li:first-child {
+    margin: 0; /*se resetea el margen para que quede a la izquierda */
+  }
+
+  .menu ul {
+    padding: 0;
+  }
+  /* portada */
+}
+
+@media screen and (max-width: 500px){
+  /*portada*/
+  .portada .button, .formulario .button{
+    padding: .4em;
+    font-size: 2em;
+    align-items: center;
+    display: block;
+  }
+  .precios .header .logotipo{
+    margin: 50px 0;
+  }
+
+  .header {
+    position: static;
+  }
+  .header .contenedor{
+    position: static; /*se resetea la posicion*/
+  }
+
+  .burger-button{
+    display: inline-block;
+  }
+  
+  .portada .contenedor{
+    position: static;
+  }
+  .menu {
+    background: rgba(255, 60, 88, .8);
+    position: fixed;
+    top: 0;
+    left: -100%;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    transition: .3s
+  }
+  .menu.active{
+    left: 0;
+  }
+  .menu ul{
+    width: 100%;
+  }
+  .menu li{
+    display: block;
+    margin: 0;
+    padding: 8px 0;
+    border-bottom : 1px solid white;
+  }
+
+  .menu li:first-child{
+    border-top: 1px solid white;
+  }
+
+  .menu li:before{
+    display: none;
+  }
+
+  .portada {
+    text-align: center;
+  }
+
+  .titulo {
+    font-size: 30px;
+  }
+
+  .title-a {
+    font-size: 16px;
+  }
+  /*portada*/
+
+
+  /*guitarra*/
+
+   .video-demo {
+      margin: 0 10px;
+   }
+
+   .guitarra .guitarra-image {
+    position: absolute;
+    top: 0;
+    left: 2%;
+    width: 200px;
+    padding: 2em;
+    /*height: auto; si estubiese declarado hay que resetearlo*/
+  }
+  .guitarra:nth-of-type(even) .guitarra-image {
+    position: absolute;
+    top: 0;
+    left: 10.5%;
+    width: 200px;
+    padding: 2em;
+  } 
+  .guitarra-title{
+   font-size: 40px;
+ }
+ .contenedor-guitarra {
+  margin-top: 17em;
+  text-align: center;
+}
+  /*guitarra*/
+
+  /* footer */ 
+
+  .col2{
+    align-items: stretch;
+  }
+  /* footer*/
+}
+
+video {
+  width: 100%;
+  padding-bottom: 40px;
+}
+
+.video-responsive-contenedor{
+  position: relative; /*para que la posicion absoluta tenga efecto el contenedor debe ser relative */
+  padding-top: 56.25%;
+}
+
+.video-responsive-src{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/*
+este es un mediaquery para retina aplicado a la imagen de fondo
+*/
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  .background{
+    background-image: url('../images/background2x.png');
+  }
+}
+
+img{
+  transition: 5s;
+  opacity: 0;  
+  animation-name: intro;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  /*object-fit: cover;   optimizaa el despliegue de la imagen segun sus dimenciones*/
+}
+
+/* img.b-loaded {
+  animation-name: intro;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+} */
+@keyframes intro{
+  0%{
+    opacity: .1;
+  }
+  10%{
+    opacity: .3;
+  }
+  20%{
+    opacity: .5;
+  }
+  50%{
+    opacity: .7;
+  }
+  90%{
+    opacity: .9;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+#logo{
+  transition: 5s;
+  opacity: 0;
+  position: relative;
+  left: -10%;
+  width: 186px;
+  animation-name: fadeIn;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+    left: 0;
+  }
+}

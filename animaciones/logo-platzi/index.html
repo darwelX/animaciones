@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Logo de Platzi</title>
+  <style type="text/css">
+    body{
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #234350;
+    }
+
+    .platzi{
+      width: 100px;
+      height: 100px;
+      position: relative;
+      margin: 40px auto;
+      background-color: #234350;
+      transform: rotate(45deg);
+      animation-name: platzi-base;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+    }
+
+    .platzi-left{
+      width: 100%;
+      /* width: 80%; */
+      height: 65%;
+      border: 20px solid #97c93e;
+      /* esto es para que se adapte a la caja del elemento padre */
+      box-sizing: border-box;
+      border-bottom: none;
+      position: relative; /*esta regla quita el pixel de borde*/
+      top: 1px;  /*esta regla quita el pixel de borde*/
+      border-radius: 20px 20px 0 0;
+      animation-name: platzi-left;
+      animation-duration: 3.5s;
+      animation-iteration-count: infinite;
+      animation-delay: 1s;
+    }
+
+    .platzi-right{
+      width: 100%;
+      height: 35%;
+      border: 20px solid #97c93e;
+       /* esto es para que se adapte a la caja del elemento padre */
+      box-sizing: border-box;
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+    }
+
+    @keyframes platzi-base{
+      0% {
+        opacity: 0;
+        transform: scale(.3) rotate(0deg);
+      }
+      30% {
+        opacity: 1;
+        transform: scale(.8) rotate(405deg);
+      }
+      80% {
+        opacity: 1;
+        transform: scale(.8) rotate(405deg);
+      }
+      100% {
+        opacity: 0;
+        /* se suma 360 grados + los 45 grados que tenia de posicion inicial */
+        transform: scale(1) rotate(405deg);
+      }
+    }
+
+    @keyframes platzi-left {
+      0% {
+        width: 100%;
+        top: 0;
+      }
+      20%{
+        width: 80%;
+        top: 0;
+        /* right: -1px; */
+        /* border-top: 21px solid #97c93e; */
+      }
+      50%{
+        width: 80%;
+        top: 0;
+        /* right: -1px; */
+        /* border-top: 21px solid #97c93e; */
+      }
+      80%{
+        width: 100%;
+        top: 0;
+      }
+      100%{
+        width: 100%;
+        top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="platzi">
+    <div class="platzi-left"></div>
+    <div class="platzi-right"></div>
+  </div>
+</body>
+</html>

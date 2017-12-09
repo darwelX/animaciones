@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    body{
+      display: flex;
+      align-items:center;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+
+    .container{
+      border: 1px solid red;
+    }
+
+    .container:hover .cuadrado {
+      transform: rotate(360deg); /*rota en sentido de las agujas del reloj*/
+      /* transform: rotate3d(x, y, z , rotate) */
+      /* Rotación en el eje X */
+      /* transform: rotateX(45deg); */
+      /* Rotación en el eje X */
+      /* transform: rotateY(45deg); */
+      /* Rotación a lado contrario de las manecillas del reloj */
+      /* transform: rotate(-45deg); */
+      /* Animación de transformaciones */
+      /* transform: rotateX(45deg) rotateY(45deg) rotateZ(45deg); */
+      /* Rotación en 3D, se coloca 1 en los grados que se desea girar */
+      /* transform: rotate3d(x,y,z,rotate); */
+      /* transform: rotate3d(1,0,0,45deg); */
+      /* Rotación en Y */
+      /* transform: rotate3d(0,1,0,45deg);      */
+    }
+    .cuadrado{
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      margin: 20px;
+      transition: 3s;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado">Hola mundo</div>
+  </div>
+</body>
+</html>

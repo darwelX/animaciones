@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Notifiaciones</title>
+  <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <style type="text/css">
+    body{
+      height: 1300vh;
+      margin: 0;
+      background-image: url('imagen.png');
+      background-size: 100%;
+    }
+    .header{
+      background-color: #1d3644;
+      height: 52px;
+      display: flex;
+      justify-content: flex-end;
+      padding-right: 200px;
+    }    
+    .notificacion{
+      color: white;
+      width: 50px;
+      /*hereda de header*/
+      height: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* se marca como relativo para que el after tenga como limite el elemento notificacion */
+      position: relative;
+    }
+
+    .notificacion::before{
+      content: "\f0f3";
+      font-family: "FontAwesome";
+      display: block;
+    }
+    .notificacion.sonar::before{
+      animation-name: bell;
+      animation-duration: .8s;
+      animation-timing-function: ease-out;
+      transform-origin: center top;
+    }
+    @keyframes bell{
+      0%{
+        transform: rotate(35deg);
+      }
+      12.5%{
+        transform: rotate(-30deg)
+      }
+      25%{
+        transform: rotate(25deg)
+      }
+      37.5%{
+        transform: rotate(-20deg);
+      }
+      50%{
+        transform: rotate(15deg)
+      }
+      62.5%{
+        transform: rotate(-10deg)
+      }
+      75%{
+        transform: rotate(5deg)
+      }
+      100%{
+        transform: rotate(0deg);
+      }
+    }
+    .notificacion::after{
+      content: attr(data-count);
+      font-size: 11px;
+      font-weight: bold;
+      font-family: Arial;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* se coloca el minimo para que el ancho crezca de acuerdo al numero de digitos */
+      min-width: 14px;
+      height: 14px;
+      background-color: #ff4600;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      opacity: 0;
+      transition: .3s;
+      transform: scale(.5);
+      will-change: opacity, transform;
+    }
+    .notificacion.show-count::after{
+      opacity: 1;
+      transform: scale(1);
+    }
+    .btn{
+      text-align: center;
+      padding: .6em .8em .8em;
+      border: none;
+      color:white;
+      background-color: lightgray;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      box-shadow: inset 0 -.2em rgba(0,0,0,.2);
+      outline: 0;
+      transition: .2s;
+      will-change: transform;
+    }
+    .btn.primary{
+      background-color: #7dc800;
+    }
+    .btn.warning{
+      background-color:#ff4633;
+    }
+    .btn:active{
+      transform: scale(.9);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <button class="btn primary" id="enviar">Enviar notifiación</button>
+    <div class="notificacion" id="notificacion">
+    </div>
+  </div>
+  <script type="text/javascript">
+    let $buttonEnviar = document.getElementById('enviar');
+    let $bell = document.getElementById('notificacion');
+
+    $buttonEnviar.addEventListener('click', (event)=>{
+      let count = Number($bell.getAttribute('data-count')) || 0;
+      $bell.setAttribute('data-count', count + 1);
+      $bell.classList.add('show-count');
+      $bell.classList.add('sonar');
+    });
+
+    $bell.addEventListener('animationend', (event)=>{
+      $bell.classList.remove('sonar');
+    });
+  </script>
+  </body>
+</html>

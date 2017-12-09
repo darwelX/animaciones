@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style type="text/css">
+    body{
+      display: flex;
+      /* align-items:center; */
+      align-items:flex-start;
+      justify-content: center;
+      height: 100vh;
+      color: white;
+      font-family: Arial;
+    }
+
+    .container{
+      border: 1px solid red;
+      width: 100%;
+    }
+
+    /* se pausa al hacer hover */
+     .container:hover .cuadrado {
+        animation-play-state: paused;
+    } 
+    .cuadrado{
+      width: 200px;
+      height: 200px;
+      background: #7dc900;
+      border-radius: 50%;
+      display:flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px;
+      position: relative;
+      /* animation-name: cuadrado, rebote; */
+      /* animation-duration: 3s, .3s; */
+      /* animation-iteration-count: infinite, 20; */
+      /* animation-direction: alternate; */
+      animation-timing-function: linear, ease-in-out;
+      transition: .3s;
+      will-change: opacity, transform; /*esta propiedad es aplicable para opacity y transform*/
+    }
+
+    .container:hover .cuadrado{
+      opacity: 0;
+      transform: scale(1.1);
+    }
+
+    @keyframes cuadrado {
+      0%{
+        left: 0;
+      }
+      100%{
+        left: calc(100% - 240px);
+      }
+    }
+
+    @keyframes escalera {
+      from{
+        transform: translateY(0);
+      }
+      to{
+        transform: translateY(500px)
+      }
+    }
+
+    @keyframes desaparecer {
+      from {
+        opacity: 1;
+      }
+      to{
+        opacity: 0;
+      }
+    }
+    @keyframes rebote {
+      from{
+        transform: translateY(0);
+      }
+      to{
+        transform: translateY(100px) scale(1, .8);
+      }
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cuadrado" id="cuadrado">Hola mundo</div>
+  </div>
+  <script type="text/javascript">
+      const cuadrado = document.getElementById('cuadrado');
+      // animationiteration(cada vez que ocurra) animationstart (cuando inicia)
+      cuadrado.addEventListener('animationend',(event) =>{
+        console.log(event);
+        switch (event.animationName) {
+          case 'rebote':
+            cuadrado.style.animationName = 'escalera';
+            cuadrado.style.animationDuration = '.3s';
+            cuadrado.style.animationIterationCount = '1';            
+            break;
+          case 'escalera':
+            cuadrado.style.animationName = 'desaparecer';
+            cuadrado.style.animationDuration = '2s';
+            cuadrado.style.animationIterationCount = '1';  
+            cuadrado.style.animationFillMode = 'forwards';     
+            break;
+          default:
+            break;
+        }
+      })
+  </script>
+</body>
+</html>
+
